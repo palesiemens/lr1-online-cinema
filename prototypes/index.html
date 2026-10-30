@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LUMEN | Онлайн-кинотеатр</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top"><span class="brand-mark">L</span><span>LUMEN</span></a>
+    <nav aria-label="Основная навигация">
+      <a class="active" href="#catalog">Главная</a>
+      <a href="#catalog">Каталог</a>
+      <a href="#continue">Продолжить просмотр</a>
+    </nav>
+    <div class="profile"><span class="avatar">ИП</span><span>Иван Петров</span><span class="chevron">⌄</span></div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="live-dot"></span> ПРЕМЬЕРА НЕДЕЛИ</div>
+        <h1>Истории,<br>которые <em>остаются.</em></h1>
+        <p>Тысячи фильмов и сериалов. Ваша следующая любимая история начинается здесь.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#catalog">Смотреть каталог <span>↗</span></a>
+          <button class="button button-ghost" data-details="Последний сигнал">Подробнее</button>
+        </div>
+        <div class="hero-meta"><span>2024</span><i></i><span>Фантастика · Триллер</span><i></i><span>16+</span></div>
+      </div>
+      <div class="hero-art" aria-label="Постер фильма Последний сигнал">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="planet"></div><div class="hero-signal">SIGNAL<br><b>01:47</b></div>
+        <div class="hero-art-caption">LUMEN ORIGINALS <span>№ 014</span></div>
+      </div>
+      <div class="hero-index"><b>01</b><span></span>03</div>
+    </section>
+
+    <section class="continue-section" id="continue">
+      <div class="section-heading"><div><div class="section-kicker">ВАША ЛЕНТА</div><h2>Продолжить просмотр</h2></div><a href="#catalog" class="subtle-link">Вся история <span>→</span></a></div>
+      <div class="continue-card">
+        <div class="mini-poster poster-signal"><span>01</span></div>
+        <div class="continue-info"><b>Последний сигнал</b><span>Фантастика · 1 ч 58 мин</span><div class="progress"><span style="width:51%"></span></div><small>Осталось 58 минут</small></div>
+        <button class="round-play" aria-label="Продолжить просмотр">▶</button>
+      </div>
+    </section>
+
+    <section class="catalog-section" id="catalog">
+      <div class="section-heading"><div><div class="section-kicker">КОЛЛЕКЦИЯ LUMEN</div><h2>Выберите свой фильм</h2></div><div class="search-wrap"><span>⌕</span><input id="search" type="search" placeholder="Поиск фильма" aria-label="Поиск фильма"></div></div>
+      <div class="filters" role="group" aria-label="Фильтр по жанру">
+        <button class="filter active" data-filter="all">Все</button>
+        <button class="filter" data-filter="Фантастика">Фантастика</button>
+        <button class="filter" data-filter="Триллер">Триллер</button>
+        <button class="filter" data-filter="Драма">Драма</button>
+        <button class="filter" data-filter="Комедия">Комедия</button>
+      </div>
+      <div class="movie-grid" id="movie-grid">
+        <article class="movie-card" data-genre="Фантастика Триллер" data-title="Последний сигнал" data-description="Инженер получает сообщение, которое было отправлено из будущего.">
+          <div class="poster poster-signal"><span class="poster-tag">LUMEN ORIGINAL</span><div class="poster-title">ПОСЛЕДНИЙ<br><b>СИГНАЛ</b></div><span class="poster-number">01 / 04</span></div>
+          <div class="movie-meta"><div><h3>Последний сигнал</h3><p>2024 · 118 мин. · 16+</p></div><span class="rating">★ 8.7</span></div>
+          <div class="genre-line">Фантастика <i>·</i> Триллер</div>
+          <button class="card-details" data-details="Последний сигнал">О фильме <span>↗</span></button>
+        </article>
+        <article class="movie-card" data-genre="Триллер Драма" data-title="Город без сна" data-description="Журналист расследует серию загадочных событий в большом городе.">
+          <div class="poster poster-city"><span class="poster-tag">ВЫБОР РЕДАКЦИИ</span><div class="city-lights"></div><div class="poster-title">ГОРОД<br><b>БЕЗ СНА</b></div><span class="poster-number">02 / 04</span></div>
+          <div class="movie-meta"><div><h3>Город без сна</h3><p>2023 · 104 мин. · 16+</p></div><span class="rating">★ 8.3</span></div>
+          <div class="genre-line">Триллер <i>·</i> Драма</div>
+          <button class="card-details" data-details="Город без сна">О фильме <span>↗</span></button>
+        </article>
+        <article class="movie-card" data-genre="Драма" data-title="Точка возврата" data-description="Путешественник пытается восстановить отношения с семьей.">
+          <div class="poster poster-return"><span class="poster-tag">ФЕСТИВАЛЬНОЕ КИНО</span><div class="return-sun"></div><div class="poster-title">ТОЧКА<br><b>ВОЗВРАТА</b></div><span class="poster-number">03 / 04</span></div>
+          <div class="movie-meta"><div><h3>Точка возврата</h3><p>2022 · 96 мин. · 12+</p></div><span class="rating">★ 8.9</span></div>
+          <div class="genre-line">Драма</div>
+          <button class="card-details" data-details="Точка возврата">О фильме <span>↗</span></button>
+        </article>
+        <article class="movie-card" data-genre="Фантастика Драма" data-title="Тихая орбита" data-description="Экипаж исследовательской станции получает сигнал с неизвестной планеты.">
+          <div class="poster poster-orbit"><span class="poster-tag">СКОРО В КАТАЛОГЕ</span><div class="orbit-small"></div><div class="poster-title">ТИХАЯ<br><b>ОРБИТА</b></div><span class="poster-number">04 / 04</span></div>
+          <div class="movie-meta"><div><h3>Тихая орбита</h3><p>2025 · 112 мин. · 12+</p></div><span class="rating">★ 8.5</span></div>
+          <div class="genre-line">Фантастика <i>·</i> Драма</div>
+          <button class="card-details" data-details="Тихая орбита">О фильме <span>↗</span></button>
+        </article>
+      </div>
+      <p class="empty-state" id="empty-state" hidden>По вашему запросу ничего не найдено.</p>
+    </section>
+  </main>
+
+  <footer><span class="brand"><span class="brand-mark">L</span><span>LUMEN</span></span><span>Учебный прототип интерфейса онлайн-кинотеатра · 2026</span><span>© LUMEN</span></footer>
+
+  <dialog id="movie-dialog">
+    <button class="dialog-close" aria-label="Закрыть">×</button>
+    <div class="dialog-kicker">КАРТОЧКА ФИЛЬМА</div><h2 id="dialog-title">Название фильма</h2>
+    <p id="dialog-description">Описание фильма.</p>
+    <div class="dialog-actions"><button class="button button-primary" id="dialog-watch">▶ Смотреть</button><button class="button button-ghost" id="dialog-favorite">♡ В избранное</button></div>
+    <p class="dialog-note">Действия демонстрационные. В рабочей системе кнопки обращаются к сервисному слою.</p>
+  </dialog>
+  <script src="app.js"></script>
+</body>
+</html>

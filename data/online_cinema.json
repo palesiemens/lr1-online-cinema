@@ -1,0 +1,179 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "full_name": "Иван Петров",
+            "email": "ivan@example.com",
+            "is_active": true
+        },
+        {
+            "id": 2,
+            "full_name": "Елена Смирнова",
+            "email": "elena@example.com",
+            "is_active": true
+        }
+    ],
+    "genres": [
+        {
+            "id": 1,
+            "name": "Фантастика",
+            "description": "Научная фантастика и космические истории."
+        },
+        {
+            "id": 2,
+            "name": "Триллер",
+            "description": "Напряженные истории и расследования."
+        },
+        {
+            "id": 3,
+            "name": "Драма",
+            "description": "Истории о людях и важных решениях."
+        }
+    ],
+    "movies": [
+        {
+            "id": 1,
+            "title": "Последний сигнал",
+            "description": "Инженер получает сообщение, которое было отправлено из будущего.",
+            "release_year": 2024,
+            "duration_minutes": 118,
+            "age_rating": "16+",
+            "genre_ids": [
+                1,
+                2
+            ],
+            "director": "А. Воронов",
+            "cast": [
+                "М. Орлова",
+                "И. Соколов"
+            ]
+        },
+        {
+            "id": 2,
+            "title": "Город без сна",
+            "description": "Журналист расследует серию загадочных событий в большом городе.",
+            "release_year": 2023,
+            "duration_minutes": 104,
+            "age_rating": "16+",
+            "genre_ids": [
+                2,
+                3
+            ],
+            "director": "Е. Миронова",
+            "cast": [
+                "А. Лебедев",
+                "Н. Ким"
+            ]
+        },
+        {
+            "id": 3,
+            "title": "Точка возврата",
+            "description": "Путешественник пытается восстановить отношения с семьей.",
+            "release_year": 2022,
+            "duration_minutes": 96,
+            "age_rating": "12+",
+            "genre_ids": [
+                3
+            ],
+            "director": "Д. Волков",
+            "cast": [
+                "С. Белова",
+                "П. Назаров"
+            ]
+        }
+    ],
+    "plans": [
+        {
+            "id": 1,
+            "name": "Стандарт",
+            "price": 299.0,
+            "duration_days": 30,
+            "max_devices": 2,
+            "video_quality": "Full HD"
+        },
+        {
+            "id": 2,
+            "name": "Премиум",
+            "price": 499.0,
+            "duration_days": 30,
+            "max_devices": 5,
+            "video_quality": "4K"
+        }
+    ],
+    "subscriptions": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "plan_id": 1,
+            "start_date": "2026-10-01",
+            "end_date": "2026-11-01",
+            "status": "active"
+        }
+    ],
+    "reviews": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "movie_id": 1,
+            "rating": 9,
+            "comment": "Интересный сюжет и хорошая динамика.",
+            "created_at": "2026-10-10T18:30:00"
+        }
+    ],
+    "watch_history": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "movie_id": 1,
+            "progress_seconds": 3540,
+            "watched_at": "2026-10-29T21:15:00"
+        },
+        {
+            "id": 2,
+            "user_id": 1,
+            "movie_id": 3,
+            "progress_seconds": 1200,
+            "watched_at": "2026-10-25T20:05:00"
+        }
+    ],
+    "favorite_lists": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "name": "Посмотреть позже",
+            "movie_ids": [
+                2,
+                3
+            ]
+        }
+    ],
+    "payments": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "subscription_id": 1,
+            "amount": 299.0,
+            "method": "Банковская карта",
+            "status": "paid",
+            "created_at": "2026-10-01T09:00:00"
+        }
+    ],
+    "promo_codes": [
+        {
+            "id": 1,
+            "code": "START20",
+            "discount_percent": 20,
+            "expires_at": "2026-12-31",
+            "is_active": true
+        }
+    ],
+    "devices": [
+        {
+            "id": 1,
+            "user_id": 1,
+            "device_name": "Домашний телевизор",
+            "device_type": "smart_tv",
+            "last_seen_at": "2026-10-29T21:00:00"
+        }
+    ]
+}

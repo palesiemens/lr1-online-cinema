@@ -1,0 +1,104 @@
+@startuml
+skinparam classAttributeIconSize 0
+skinparam shadowing false
+skinparam packageStyle rectangle
+hide empty members
+
+package "Предметная область" {
+  class User {
+    +id: int
+    +full_name: str
+    +email: str
+    +is_active: bool
+  }
+  class Genre {
+    +id: int
+    +name: str
+    +description: str
+  }
+  class Movie {
+    +id: int
+    +title: str
+    +description: str
+    +release_year: int
+    +duration_minutes: int
+    +age_rating: str
+    +genre_ids: list[int]
+    +director: str
+    +cast: list[str]
+  }
+  class SubscriptionPlan {
+    +id: int
+    +name: str
+    +price: float
+    +duration_days: int
+    +max_devices: int
+    +video_quality: str
+  }
+  class Subscription {
+    +id: int
+    +user_id: int
+    +plan_id: int
+    +start_date: str
+    +end_date: str
+    +status: SubscriptionStatus
+  }
+  class Review {
+    +id: int
+    +user_id: int
+    +movie_id: int
+    +rating: int
+    +comment: str
+    +created_at: str
+  }
+  class WatchHistoryEntry {
+    +id: int
+    +user_id: int
+    +movie_id: int
+    +progress_seconds: int
+    +watched_at: str
+  }
+  class FavoriteList {
+    +id: int
+    +user_id: int
+    +name: str
+    +movie_ids: list[int]
+  }
+  class Payment {
+    +id: int
+    +user_id: int
+    +subscription_id: int
+    +amount: float
+    +method: str
+    +status: PaymentStatus
+    +created_at: str
+  }
+  class PromoCode {
+    +id: int
+    +code: str
+    +discount_percent: int
+    +expires_at: str
+    +is_active: bool
+  }
+  class Device {
+    +id: int
+    +user_id: int
+    +device_name: str
+    +device_type: str
+    +last_seen_at: str
+  }
+}
+
+User "1" -- "0..*" Subscription : оформляет
+SubscriptionPlan "1" -- "0..*" Subscription : тариф
+User "1" -- "0..*" Review : пишет
+Movie "1" -- "0..*" Review : оценивается
+User "1" -- "0..*" WatchHistoryEntry : смотрит
+Movie "1" -- "0..*" WatchHistoryEntry : история
+User "1" -- "0..*" FavoriteList : создает
+FavoriteList "0..*" -- "0..*" Movie : содержит
+Genre "0..*" -- "0..*" Movie : классифицирует
+Subscription "1" -- "0..*" Payment : оплачивается
+User "1" -- "0..*" Device : использует
+User "1" -- "0..*" Payment : оплачивает
+@enduml

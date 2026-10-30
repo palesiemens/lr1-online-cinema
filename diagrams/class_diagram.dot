@@ -1,0 +1,32 @@
+digraph UML {
+  graph [rankdir=TB, bgcolor="white", pad="0.25", nodesep="0.32", ranksep="0.58", splines=polyline, fontname="DejaVu Sans", label="UML: предметная область онлайн-кинотеатра", labelloc=t, fontsize=20, dpi=180];
+  node [shape=plain, fontname="DejaVu Sans", fontsize=10];
+  edge [fontname="DejaVu Sans", fontsize=9, color="#455468", arrowsize=0.7];
+
+  subgraph cluster_domain {
+    label="Предметная область (11 классов)"; color="#9BA8B7"; style="rounded"; fontsize=13;
+    User [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>User</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>full_name: str<BR ALIGN="LEFT"/>email: str<BR ALIGN="LEFT"/>is_active: bool</TD></TR></TABLE>>];
+    Genre [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>Genre</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>name: str<BR ALIGN="LEFT"/>description: str</TD></TR></TABLE>>];
+    Movie [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>Movie</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>title: str<BR ALIGN="LEFT"/>description: str<BR ALIGN="LEFT"/>release_year: int<BR ALIGN="LEFT"/>duration_minutes: int<BR ALIGN="LEFT"/>age_rating: str<BR ALIGN="LEFT"/>genre_ids: list[int]<BR ALIGN="LEFT"/>director: str<BR ALIGN="LEFT"/>cast: list[str]</TD></TR></TABLE>>];
+    SubscriptionPlan [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>SubscriptionPlan</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>name: str<BR ALIGN="LEFT"/>price: float<BR ALIGN="LEFT"/>duration_days: int<BR ALIGN="LEFT"/>max_devices: int<BR ALIGN="LEFT"/>video_quality: str</TD></TR></TABLE>>];
+    Subscription [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>Subscription</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>user_id: int<BR ALIGN="LEFT"/>plan_id: int<BR ALIGN="LEFT"/>start_date: str<BR ALIGN="LEFT"/>end_date: str<BR ALIGN="LEFT"/>status: SubscriptionStatus</TD></TR></TABLE>>];
+    Review [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>Review</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>user_id: int<BR ALIGN="LEFT"/>movie_id: int<BR ALIGN="LEFT"/>rating: int<BR ALIGN="LEFT"/>comment: str<BR ALIGN="LEFT"/>created_at: str</TD></TR></TABLE>>];
+    WatchHistoryEntry [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>WatchHistoryEntry</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>user_id: int<BR ALIGN="LEFT"/>movie_id: int<BR ALIGN="LEFT"/>progress_seconds: int<BR ALIGN="LEFT"/>watched_at: str</TD></TR></TABLE>>];
+    FavoriteList [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>FavoriteList</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>user_id: int<BR ALIGN="LEFT"/>name: str<BR ALIGN="LEFT"/>movie_ids: list[int]</TD></TR></TABLE>>];
+    Payment [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>Payment</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>user_id: int<BR ALIGN="LEFT"/>subscription_id: int<BR ALIGN="LEFT"/>amount: float<BR ALIGN="LEFT"/>method: str<BR ALIGN="LEFT"/>status: PaymentStatus<BR ALIGN="LEFT"/>created_at: str</TD></TR></TABLE>>];
+    PromoCode [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>PromoCode</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>code: str<BR ALIGN="LEFT"/>discount_percent: int<BR ALIGN="LEFT"/>expires_at: str<BR ALIGN="LEFT"/>is_active: bool</TD></TR></TABLE>>];
+    Device [label=<<TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="5"><TR><TD BGCOLOR="#DCE8F5"><B>Device</B></TD></TR><TR><TD ALIGN="LEFT">id: int<BR ALIGN="LEFT"/>user_id: int<BR ALIGN="LEFT"/>device_name: str<BR ALIGN="LEFT"/>device_type: str<BR ALIGN="LEFT"/>last_seen_at: str</TD></TR></TABLE>>];
+  }
+  User -> Subscription [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  SubscriptionPlan -> Subscription [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  User -> Review [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  Movie -> Review [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  User -> WatchHistoryEntry [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  Movie -> WatchHistoryEntry [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  User -> FavoriteList [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  FavoriteList -> Movie [dir=both, arrowhead=none, arrowtail=none, label="0..* : 0..*"];
+  Genre -> Movie [dir=both, arrowhead=none, arrowtail=none, label="0..* : 0..*"];
+  Subscription -> Payment [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  User -> Payment [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+  User -> Device [dir=both, arrowhead=none, arrowtail=none, label="1 : 0..*"];
+}

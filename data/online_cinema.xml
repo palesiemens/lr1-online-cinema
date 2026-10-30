@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='utf-8'?>
+<online_cinema schema_version="1.0">
+    <users>
+        <item>
+            <id>1</id>
+            <full_name>Иван Петров</full_name>
+            <email>ivan@example.com</email>
+            <is_active>True</is_active>
+        </item>
+        <item>
+            <id>2</id>
+            <full_name>Елена Смирнова</full_name>
+            <email>elena@example.com</email>
+            <is_active>True</is_active>
+        </item>
+    </users>
+    <genres>
+        <item>
+            <id>1</id>
+            <name>Фантастика</name>
+            <description>Научная фантастика и космические истории.</description>
+        </item>
+        <item>
+            <id>2</id>
+            <name>Триллер</name>
+            <description>Напряженные истории и расследования.</description>
+        </item>
+        <item>
+            <id>3</id>
+            <name>Драма</name>
+            <description>Истории о людях и важных решениях.</description>
+        </item>
+    </genres>
+    <movies>
+        <item>
+            <id>1</id>
+            <title>Последний сигнал</title>
+            <description>Инженер получает сообщение, которое было отправлено из будущего.</description>
+            <release_year>2024</release_year>
+            <duration_minutes>118</duration_minutes>
+            <age_rating>16+</age_rating>
+            <genre_ids>
+                <item>1</item>
+                <item>2</item>
+            </genre_ids>
+            <director>А. Воронов</director>
+            <cast>
+                <item>М. Орлова</item>
+                <item>И. Соколов</item>
+            </cast>
+        </item>
+        <item>
+            <id>2</id>
+            <title>Город без сна</title>
+            <description>Журналист расследует серию загадочных событий в большом городе.</description>
+            <release_year>2023</release_year>
+            <duration_minutes>104</duration_minutes>
+            <age_rating>16+</age_rating>
+            <genre_ids>
+                <item>2</item>
+                <item>3</item>
+            </genre_ids>
+            <director>Е. Миронова</director>
+            <cast>
+                <item>А. Лебедев</item>
+                <item>Н. Ким</item>
+            </cast>
+        </item>
+        <item>
+            <id>3</id>
+            <title>Точка возврата</title>
+            <description>Путешественник пытается восстановить отношения с семьей.</description>
+            <release_year>2022</release_year>
+            <duration_minutes>96</duration_minutes>
+            <age_rating>12+</age_rating>
+            <genre_ids>
+                <item>3</item>
+            </genre_ids>
+            <director>Д. Волков</director>
+            <cast>
+                <item>С. Белова</item>
+                <item>П. Назаров</item>
+            </cast>
+        </item>
+    </movies>
+    <plans>
+        <item>
+            <id>1</id>
+            <name>Стандарт</name>
+            <price>299.0</price>
+            <duration_days>30</duration_days>
+            <max_devices>2</max_devices>
+            <video_quality>Full HD</video_quality>
+        </item>
+        <item>
+            <id>2</id>
+            <name>Премиум</name>
+            <price>499.0</price>
+            <duration_days>30</duration_days>
+            <max_devices>5</max_devices>
+            <video_quality>4K</video_quality>
+        </item>
+    </plans>
+    <subscriptions>
+        <item>
+            <id>1</id>
+            <user_id>1</user_id>
+            <plan_id>1</plan_id>
+            <start_date>2026-10-01</start_date>
+            <end_date>2026-11-01</end_date>
+            <status>active</status>
+        </item>
+    </subscriptions>
+    <reviews>
+        <item>
+            <id>1</id>
+            <user_id>1</user_id>
+            <movie_id>1</movie_id>
+            <rating>9</rating>
+            <comment>Интересный сюжет и хорошая динамика.</comment>
+            <created_at>2026-10-10T18:30:00</created_at>
+        </item>
+    </reviews>
+    <watch_history>
+        <item>
+            <id>1</id>
+            <user_id>1</user_id>
+            <movie_id>1</movie_id>
+            <progress_seconds>3540</progress_seconds>
+            <watched_at>2026-10-29T21:15:00</watched_at>
+        </item>
+        <item>
+            <id>2</id>
+            <user_id>1</user_id>
+            <movie_id>3</movie_id>
+            <progress_seconds>1200</progress_seconds>
+            <watched_at>2026-10-25T20:05:00</watched_at>
+        </item>
+    </watch_history>
+    <favorite_lists>
+        <item>
+            <id>1</id>
+            <user_id>1</user_id>
+            <name>Посмотреть позже</name>
+            <movie_ids>
+                <item>2</item>
+                <item>3</item>
+            </movie_ids>
+        </item>
+    </favorite_lists>
+    <payments>
+        <item>
+            <id>1</id>
+            <user_id>1</user_id>
+            <subscription_id>1</subscription_id>
+            <amount>299.0</amount>
+            <method>Банковская карта</method>
+            <status>paid</status>
+            <created_at>2026-10-01T09:00:00</created_at>
+        </item>
+    </payments>
+    <promo_codes>
+        <item>
+            <id>1</id>
+            <code>START20</code>
+            <discount_percent>20</discount_percent>
+            <expires_at>2026-12-31</expires_at>
+            <is_active>True</is_active>
+        </item>
+    </promo_codes>
+    <devices>
+        <item>
+            <id>1</id>
+            <user_id>1</user_id>
+            <device_name>Домашний телевизор</device_name>
+            <device_type>smart_tv</device_type>
+            <last_seen_at>2026-10-29T21:00:00</last_seen_at>
+        </item>
+    </devices>
+</online_cinema>
