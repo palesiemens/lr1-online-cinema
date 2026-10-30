@@ -9,7 +9,7 @@ from .service import CinemaService
 from .storage import JsonStorage, XmlStorage
 
 
-DATA_DIR = Path(__file__).resolve().parents[2] / "data"
+DATA_DIR = Path(__file__).resolve().parents[1] / "data"
 JSON_PATH = DATA_DIR / "online_cinema.json"
 XML_PATH = DATA_DIR / "online_cinema.xml"
 
